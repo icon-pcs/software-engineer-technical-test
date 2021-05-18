@@ -1,8 +1,8 @@
 <?php declare(strict_types=1);
 
-namespace IconLanguageServices\SoftwareEngineerTechnicalTest2021\Test;
+namespace IconLanguageServices\SoftwareEngineerTechnicalTest2021\Test\Part1;
 
-use IconLanguageServices\SoftwareEngineerTechnicalTest2021\Solution;
+use IconLanguageServices\SoftwareEngineerTechnicalTest2021\Part1\Solution;
 use PHPUnit\Framework\TestCase;
 
 class SolutionTest extends TestCase
@@ -13,7 +13,7 @@ class SolutionTest extends TestCase
      */
     public function it_provides_the_correct_answer_to_the_puzzle(string $inputFile, int $expectedAnswer): void
     {
-        $instructions = trim(file_get_contents(__DIR__ . "/../input/" . $inputFile));
+        $instructions = trim(file_get_contents(__DIR__ . "/../../input/" . $inputFile));
 
         $solution = new Solution($instructions);
 

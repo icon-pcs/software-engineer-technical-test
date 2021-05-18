@@ -1,20 +1,23 @@
 {
-    "name": "iconlanguageservices/software-engineer-technical-test-2021",
-    "description": "Technical test for our open Software Engineer position",
-    "require-dev": {
-        "phpunit/phpunit": "^9.5"
+  "name": "iconlanguageservices/software-engineer-technical-test-2021",
+  "description": "Technical test for our open Software Engineer position",
+  "require-dev": {
+    "phpunit/phpunit": "^9.5"
+  },
+  "require": {
+    "php": "7.4.* || 8.0.*"
+  },
+  "autoload": {
+    "psr-4": {
+      "IconLanguageServices\\SoftwareEngineerTechnicalTest2021\\": "src/"
     },
-    "require": {
-        "php": "7.4.* || 8.0.*"
-    },
-    "autoload": {
-        "psr-4": {
-            "IconLanguageServices\\SoftwareEngineerTechnicalTest2021\\": "src/"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "IconLanguageServices\\SoftwareEngineerTechnicalTest2021\\Test\\": "test/"
-        }
+    "files": [
+      "src/Part2/functions.php"
+    ]
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "IconLanguageServices\\SoftwareEngineerTechnicalTest2021\\Test\\": "test/"
     }
+  }
 }
