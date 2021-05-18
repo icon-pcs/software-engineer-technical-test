@@ -18,7 +18,7 @@ He needs you to help him work out which floor his friend lives on.
 We have created a PHP class `Solution` in `src/Solution.php`. This class takes an instruction set as a `string` in its
 constructor, and has a single method `getAnswer()`. The method is not implemented.
 
-Implement the `getAnswer()` method.
+Implement the `getAnswer()` method; it should return the floor number, as an `int`, that the instruction set will lead to.
 
 - The solution should work for any set of input instructions (i.e. any combination of `(` and `)` characters).
 - We have provided a set of sample instruction sets in `input/`.
@@ -29,7 +29,7 @@ Implement the `getAnswer()` method.
 
 ## Instructions
 
-- Clone this repository (please do not fork, in order to not share your solution with other applicants).
+- Clone this repository (**please do not fork**, in order to not share your solution with other applicants).
 - Implement your solution in `src/Solution.php`. Remember, you can add more PHP classes and functions if you want to.
   You can do this in the `src/` directory.
 - Commit your solution.
