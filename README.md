@@ -122,6 +122,6 @@ by visiting your GitHub repository homepage, then clicking `Actions` at the top 
 We have deliberately designed this puzzle so that you do not need to run the tests locally to demonstrate that you have solved it.
 However, it is of course possible by following these steps:
 
-- You will need an environment with PHP 7.4 or PHP 8.0, and Composer.
+- You will need an environment with PHP 8.1, and Composer.
 - Install dependencies with `composer install`.
 - Run tests with `vendor/bin/phpunit`.
