@@ -1,4 +1,4 @@
-# Software Engineer Technical Test 2021
+# Software Engineer Technical Test
 
 This technical test consists of two parts, one covering PHP, and the other covering SQL.
 
@@ -24,12 +24,15 @@ constructor, and has a single method `getAnswer()`. The method is not implemente
 
 Implement the `getAnswer()` method; it should return the floor number, as an `int`, that the instruction set will lead to.
 
-- The solution should work for any set of input instructions (i.e. any combination of `(` and `)` characters).
-- We have provided a set of sample instruction sets in `input/`.
-- You should not need to change the constructor, or the method signature.
-- You may add new PHP classes or functions if you think it is helpful.
-- The bundled test suite should not be changed (although you may add more tests if you want).
-- The test suite must pass.
+We encourage you to use an object-oriented solution. Although we have included a `Solution` class in this repository,
+you can add other classes and/or functions as necessary in order to come up with a solution.
+
+The solution should work for any set of input instructions (i.e. any combination of `(` and `)` characters).
+
+We have provided a set of sample instruction sets in `input/`, and a test that uses each of these sample instruction sets.
+
+Do not remove or change `SolutionTest`. We encourage you to add unit tests for any other classes or functions that you create.
+
 
 ## Part 2: SQL
 
@@ -102,12 +105,11 @@ These methods are not yet implemented.
 
 ## Instructions
 
-- Clone this repository (**please do not fork**, in order to not share your solution with other applicants).
+- Fork this repository and clone it.
 - Implement your solution in `src/Part1/Solution.php` and `src/Part2/Solution.php`. Remember, you can add more PHP classes and functions if you want to.
   You can do this in the `src/` directory.
-- Commit your solution.
-- Create a public GitHub repository and push the cloned repository to it.
-- Please email a link to the repository to the recruiter you have been in contact with.
+- Commit your solution and push to your fork.
+- Submit a pull request to our repository ahead of your scheduled interview.
 
 ## Running the tests
 
