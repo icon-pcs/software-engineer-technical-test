@@ -2,6 +2,7 @@
 
 namespace IconLanguageServices\SoftwareEngineerTechnicalTest2021\Part1;
 
+
 class Solution
 {
     /**
@@ -23,5 +24,9 @@ class Solution
     public function getAnswer(): int
     {
         // TODO implement the solution
+        $floorDirectionService = new FloorDirectionsService();
+        $floorMov = new FloorMovements($floorDirectionService);
+        return $floorMov->evaluteFloor($this->instructions);
+        
     }
 }

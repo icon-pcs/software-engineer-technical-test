@@ -19,6 +19,10 @@ class Solution
     {
         return <<<SQL
             -- Put your SQL statement here
+            SELECT name as artistname,title as songtitle 
+            FROM `songs` 
+            INNER JOIN artists 
+            ON artists.id = songs.artist_id;
         SQL;
     }
 
@@ -37,6 +41,16 @@ class Solution
     {
         return <<<SQL
             -- Put your SQL statement here
+            SELECT artists.name as artistname, COUNT(DISTINCT genres.name) as genre_count
+            FROM songs
+            INNER JOIN artists 
+            ON artists.id = songs.artist_id
+            INNER JOIN songs_genres
+            ON songs_genres.song_id = songs.id
+            INNER JOIN genres
+            ON genres.id = songs_genres.genre_id
+            GROUP BY artists.name
+            ORDER BY genre_count DESC;
         SQL;
     }
 }
