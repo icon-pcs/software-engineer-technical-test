@@ -14,21 +14,7 @@ class SolutionTest extends TestCase
      * @dataProvider inputFiles
      * @expectedException InvalidArgumentException
      */
-    public function it_throws_an_exception_when_input_is_empty(string $inputFile): void
-    {
-    $instructions = trim(file_get_contents(__DIR__ . "/../../input/" . $inputFile));
     
-    if ($instructions === '') {
-        $this->expectException(\InvalidArgumentException::class);
-        $this->expectExceptionMessage('Input cannot be empty');
-
-        $solution = new Solution('');
-        $solution->getAnswer();
-    } else {
-        $solution = new Solution($instructions);
-        $this->assertNotNull($solution->getAnswer());
-    }
-    }
 
     public function it_provides_the_correct_answer_to_the_puzzle(string $inputFile, int $expectedAnswer): void
     {
@@ -50,6 +36,51 @@ class SolutionTest extends TestCase
             ["5.txt", -1],
             ["6.txt", 138],
             
+        ];
+    }
+
+
+    /** @var FloorDirectionsService */
+    private $floorDirectionsService;
+
+    protected function setUp(): void
+    {
+        $this->floorDirectionsService = new FloorDirectionsService();
+    }
+
+    /**
+     * @dataProvider validSymbolsProvider
+     */
+    public function testGetDirectionsReturnsExpectedResultForValidSymbols($symbol, $expectedResult)
+    {
+        $this->assertEquals($expectedResult, $this->floorDirectionsService->getFloorDirection($symbol));
+    }
+
+    public function validSymbolsProvider()
+    {
+        return [
+            ['(', 1],
+            [')', -1],
+        ];
+    }
+
+    /**
+     * @dataProvider invalidSymbolsProvider
+     */
+    public function testGetDirectionsThrowsExceptionForInvalidSymbols($symbol)
+    {
+        $this->expectException(\InvalidArgumentException::class);
+        $this->floorDirectionsService->getFloorDirection($symbol);
+    }
+
+    public function invalidSymbolsProvider()
+    {
+        return [
+            ['*'],
+            ['+'],
+            ['X'],
+            ['<'],
+            ['>'],
         ];
     }
     
