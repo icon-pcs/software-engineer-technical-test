@@ -51,7 +51,7 @@ class SolutionTest extends TestCase
     /**
      * @dataProvider validSymbolsProvider
      */
-    public function testGetDirectionsReturnsExpectedResultForValidSymbols($symbol, $expectedResult)
+    public function testgetFloorDirectionReturnsExpectedResultForValidSymbols($symbol, $expectedResult)
     {
         $this->assertEquals($expectedResult, $this->floorDirectionsService->getFloorDirection($symbol));
     }
@@ -67,7 +67,7 @@ class SolutionTest extends TestCase
     /**
      * @dataProvider invalidSymbolsProvider
      */
-    public function testGetDirectionsThrowsExceptionForInvalidSymbols($symbol)
+    public function testgetFloorDirectionThrowsExceptionForInvalidSymbols($symbol)
     {
         $this->expectException(\InvalidArgumentException::class);
         $this->floorDirectionsService->getFloorDirection($symbol);
@@ -76,11 +76,11 @@ class SolutionTest extends TestCase
     public function invalidSymbolsProvider()
     {
         return [
-            ['*'],
+            ['&'],
             ['+'],
             ['X'],
             ['<'],
-            ['>'],
+            [' '],
         ];
     }
     

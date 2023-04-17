@@ -75,10 +75,10 @@ class SolutionTest extends TestCase
 
         $results = $statement->fetchAll(PDO::FETCH_NUM);
         
-        self::assertContainsEquals(['The Beatles', '3'], $results, "The Beatles have 3 genres in the dataset");
-        self::assertContainsEquals(['The Beach Boys', '2'], $results, "The Beach Boys have 2 genres in the dataset");
-        self::assertContainsEquals(['Nirvana', '2'], $results, "Nirvana have 2 genres in the dataset");
+        self::assertContains(['The Beatles', '3'], $results, "The Beatles have 3 genres in the dataset");
+        self::assertContains(['The Beach Boys', '2'], $results, "The Beach Boys have 2 genres in the dataset");
+        self::assertContains(['Nirvana', '2'], $results, "Nirvana have 2 genres in the dataset");
 
-        self::assertCount(4, $results);
+        self::assertCount(3, $results);
     }
 }
